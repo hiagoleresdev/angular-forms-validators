@@ -1,0 +1,60 @@
+<form [formGroup]="formulario">
+
+
+<div class="col-md-6">
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text"
+           class="form-control"
+           placeholder="Nome"
+           formControlName="nome"
+           />
+    <div *ngIf="formulario.get('nome')?.invalid" class="alert-danger">
+      O Nome é Obrigatório
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email"
+    class="form-control"
+           placeholder="Email"
+           formControlName="email" />
+    <div *ngIf="formulario.get('email')?.invalid" class="alert-danger">
+        O Email é Obrigatório
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="senha">Senha</label>
+    <input type="password"
+    class="form-control"
+           placeholder="Senha"
+           formControlName="senha" />
+    <div *ngIf="formulario.get('senha')?.invalid" class="alert-danger">
+       A senha é obrigatória
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="senha">CPF</label>
+    <input type="text"
+           class="form-control"
+
+           mask="000.000.000-00"
+           placeholder="000.000.000-00"
+           formControlName="cpf" />
+    <div *ngIf="formulario.get('cpf')?.invalid" class="alert-danger">
+       O cpf é obrigatório
+    </div>
+  </div>
+</div>
+
+
+
+  <button class="btn btn-success"  (click)="postar()"
+  [disabled]="!formulario.valid">
+      Enviar
+  </button>
+</form>
