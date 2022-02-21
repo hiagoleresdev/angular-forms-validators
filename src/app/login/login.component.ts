@@ -28,7 +28,12 @@ export class LoginComponent implements OnInit {
     }
     console.log("Formulário válido", this.formulario.value);
   }
+
+  limpaTudo():void{
+    this.formulario.reset();
   }
+
+}
 
 
 
